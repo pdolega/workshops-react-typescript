@@ -1,0 +1,6 @@
+.idea
+typings
+node_modules
+dist
+public/js
+npm-debug.log

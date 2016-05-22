@@ -1,0 +1,24 @@
+.comic-classic {
+    font-family: Comic Sans MS;
+}
+
+.comic-classic input {
+    border-color: red;
+}
+
+.error input {
+    border-color: red;
+}
+
+.error .Select-control {
+    border-color: red;
+}
+
+.error label {
+    color: red;
+    font-weight: bold;
+}
+
+button.error {
+    background-color: red;
+}
