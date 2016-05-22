@@ -30,16 +30,10 @@ module.exports = [
             }
         },
         module: {
-            preLoaders: [
-                {
-                    test: /\.(ts|tsx)$/,
-                    loader: "tslint"
-                }
-            ],
             loaders: [
                 {
                     test: /\.(ts|tsx)$/,
-                    loader: "awesome-typescript"
+                    loaders: ["react-hot", "awesome-typescript"]
                 }, {
                     test: /\.css$/,
                     loader: ExtractTextPlugin.extract('css')
