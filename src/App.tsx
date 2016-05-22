@@ -20,7 +20,9 @@ export class App extends React.Component<void, TweetList> {
 
     public render(): JSX.Element {
         return (
-            <span>React-rendered text</span>
+            <div>
+                <span>React-rendered text</span>
+            </div>
         );
     }
 }

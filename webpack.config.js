@@ -34,9 +34,6 @@ module.exports = [
                 {
                     test: /\.(ts|tsx)$/,
                     loaders: ["react-hot", "awesome-typescript"]
-                }, {
-                    test: /\.css$/,
-                    loader: ExtractTextPlugin.extract('css')
                 }
             ]
         },
@@ -49,10 +46,7 @@ module.exports = [
                     }
                 });
             },
-            new ExtractTextPlugin('bundle.css', {
-                allChunks: true,
-                disable: false
-            }),
+            new webpack.NoErrorsPlugin(),
             new ForkCheckerPlugin()
         ],
         node: {
