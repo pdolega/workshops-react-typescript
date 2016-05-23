@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import {model, TweetList} from "./AppModel";
+import {TweetBox} from "./TweetBox";
+import {Tweet} from "./socket/TweetSocketConnection";
 
 export class App extends React.Component<void, TweetList> {
     constructor() {
@@ -21,9 +23,17 @@ export class App extends React.Component<void, TweetList> {
     public render(): JSX.Element {
         return (
             <div>
-                <span>React-rendered text</span>
+                <span>Number of tweets received thus far: {this.state.tweets.size}</span>
+
+                <div>
+                    {this.renderTweets()}
+                </div>
             </div>
         );
+    }
+
+    private renderTweets(): JSX.Element[] {
+        return this.state.tweets.map((tweet: Tweet) => <TweetBox tweet={tweet} key={tweet.id}/>).toArray();
     }
 }
 
