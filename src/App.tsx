@@ -3,6 +3,7 @@ import * as ReactDom from "react-dom";
 import {model, TweetList} from "./AppModel";
 import {TweetBox} from "./TweetBox";
 import {Tweet} from "./socket/TweetSocketConnection";
+import {MonitorPerf} from "./util/MonitorPerf";
 
 export class App extends React.Component<void, TweetList> {
     constructor() {
@@ -23,6 +24,7 @@ export class App extends React.Component<void, TweetList> {
     public render(): JSX.Element {
         return (
             <div>
+                <MonitorPerf/>
                 <span>Number of tweets received thus far: {this.state.tweets.size}</span>
 
                 <div>
@@ -33,7 +35,7 @@ export class App extends React.Component<void, TweetList> {
     }
 
     private renderTweets(): JSX.Element[] {
-        return this.state.tweets.map((tweet: Tweet) => <TweetBox tweet={tweet} key={tweet.id}/>).toArray();
+        return this.state.tweets.map((tweet: Tweet) => <TweetBox tweet={tweet} modifyTweet={model.modifyTweet} key={tweet.id}/>).toArray();
     }
 }
 

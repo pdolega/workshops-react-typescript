@@ -1,11 +1,12 @@
 import * as React from "react";
 import * as ReactPerf from "react-addons-perf";
+import {PureComponent} from "./PureComponent";
 
 export class State {
     started: boolean = false;
 }
 
-export class MonitorPerf extends React.Component<void, State> {
+export class MonitorPerf extends PureComponent<void, State> {
 
     constructor() {
         super();
@@ -25,14 +26,13 @@ export class MonitorPerf extends React.Component<void, State> {
     }
 
     private startMeasurement(): void {
-        this.state.started = true;
-        this.setState(this.state);
+        this.setState({started: true});
         ReactPerf.start();
     }
 
     private stopMeasurements(): void {
         this.state.started = false;
-        this.setState(this.state);
+        this.setState({started: false});
         ReactPerf.stop();
         let measurments = ReactPerf.getLastMeasurements();
         ReactPerf.printWasted(measurments);
