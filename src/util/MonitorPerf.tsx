@@ -31,7 +31,6 @@ export class MonitorPerf extends PureComponent<void, State> {
     }
 
     private stopMeasurements(): void {
-        this.state.started = false;
         this.setState({started: false});
         ReactPerf.stop();
         let measurments = ReactPerf.getLastMeasurements();
