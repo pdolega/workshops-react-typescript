@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import {model, TweetList} from "./AppModel";
+import {model} from "./AppModel";
 import {TweetBox} from "./TweetBox";
-import {Tweet} from "./socket/TweetSocketConnection";
 import {MonitorPerf} from "./util/MonitorPerf";
+import {TweetList, Tweet} from "./TweetModel";
 
 export class App extends React.Component<void, TweetList> {
     constructor() {

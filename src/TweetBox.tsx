@@ -1,6 +1,6 @@
 import * as React from "react";
-import {Tweet} from "./socket/TweetSocketConnection";
 import {PureComponent} from "./util/PureComponent";
+import {Tweet} from "./TweetModel";
 
 export interface Props {
     tweet: Tweet;

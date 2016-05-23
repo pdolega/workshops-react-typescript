@@ -1,9 +1,4 @@
-export interface Tweet {
-    id: string;
-    text:string;
-    user:string;
-    userImg:string;
-}
+import {Tweet} from "../TweetModel";
 
 export class TweetSocketConnection {
 

@@ -1,26 +1,6 @@
-import {TweetSocketConnection, Tweet} from "./socket/TweetSocketConnection";
-import {List} from "immutable";
+import {TweetSocketConnection} from "./socket/TweetSocketConnection";
 import {Util} from "./util/Util";
-
-export class TweetEntry implements Tweet {
-    id: string;
-    text: string;
-    user: string;
-    userImg: string;
-
-    constructor(tweet: Tweet) {
-        this.id = tweet.id;
-        this.text = tweet.text;
-        this.user = tweet.user;
-        this.userImg = tweet.userImg;
-    }
-}
-
-export class TweetList {
-    constructor(
-        public tweets: List<Tweet> = List<Tweet>()
-    ) {}
-}
+import {TweetList, Tweet} from "./TweetModel";
 
 export type ModelListener = (model: TweetList) => void;
 
